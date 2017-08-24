@@ -90,10 +90,11 @@ l1 = len(PGp)
 l2 = len(SGp)
 l3 = len(PFp)
 l4 = len(Cp)
+l5 = len(SFp)
 
-totplay = l2 +l3 + l4
+ 
 
-totposs = 2**(totplay)
+totposs =  l1 * l2 * 2 * l3 * 2 * l4 * l5 * 2
 
 tottime = totposs/10000000
 
@@ -117,45 +118,34 @@ if position == 'PG':
                             for o in range(len(PFp)):
                                 for p in range(len(Cp)):
                                #looks to see if the salary is in range
-                                            
+                                     if o == n:
+                                            continue
+                                     if m == l:
+                                            continue
+                                     if k == j:
+                                            continue
+                                     if n == o:
+                                            continue
+                                     if l == m:
+                                            continue
+                                     if j == k:
+                                            continue 
                                     sal = playsal \
                                     +SFs[l]+SFs[m]\
                                     +SGs[j]+SGs[k]\
                                     +PFs[n]+PFs[o]\
                                     +PGs[i]+Cs[p]
                                     if sal > S:
-                                            points = 0
+                                          continue 
                                     if sal <= S:
-                                        if o == n:
-                                            points = 0
-                                        if m == l:
-                                            points = 0
-                                        if k == j:
-                                            points = 0
-                                        if n == o:
-                                            points = 0
-                                        if l == m:
-                                            points = 0
-                                        if j == k:
-                                            points = 0
+                                       
                                         #Calculates the points of the set 
                                         points = playpoint \
                                         +SFp[l]+SFp[m]\
                                         +SGp[j]+SGp[k]\
                                         +PFp[n]+PFp[o]\
                                         +PGp[i]+Cp[p]
-                                        if o == n:
-                                            points = 0
-                                        if m == l:
-                                            points = 0
-                                        if k == j:
-                                            points = 0
-                                        if n == o:
-                                            points = 0
-                                        if l == m:
-                                            points = 0
-                                        if j == k:
-                                            points = 0
+                                       
                                         if points > maxpoints:
                                                     #Grabs the amount of points and player 
                                                     #holders 
